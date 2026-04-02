@@ -106,7 +106,7 @@ export function Login() {
                   value={employeeId}
                   onChange={(e) => setEmployeeId(e.target.value)}
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm outline-none transition-all placeholder:text-slate-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:bg-slate-100/50"
-                  placeholder="e.g. 48948"
+                  placeholder="e.g. XXXXX"
                   required
                 />
               </div>
@@ -123,7 +123,7 @@ export function Login() {
                   value={mobileNumber}
                   onChange={(e) => setMobileNumber(e.target.value)}
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm outline-none transition-all placeholder:text-slate-400 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 hover:bg-slate-100/50"
-                  placeholder="e.g. 8879714579"
+                  placeholder="e.g. XXXXXXXXXX"
                   required
                 />
               </div>

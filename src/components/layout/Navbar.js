@@ -1,6 +1,7 @@
 import React from 'react';
 import { Wind, LogOut, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ export function Navbar() {
   const handleLogout = () => {
     navigate('/login');
   };
-
+  const employeeId = Cookies.get('employeeId');
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/70 backdrop-blur-md">
       <div className="flex h-16 items-center px-6 justify-between max-w-[1400px] mx-auto">
@@ -25,14 +26,14 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1.5 border border-indigo-100">
               <Sparkles className="h-4 w-4 text-indigo-500" />
-              <span className="text-sm font-bold text-indigo-700">48948</span>
+              <span className="text-sm font-bold text-indigo-700">{employeeId}</span>
             </div>
             <span className="text-sm font-medium text-slate-500 hidden md:block">
               Mumbai Central • West • West Zone
             </span>
           </div>
           <div className="h-8 w-px bg-slate-200 mx-2"></div>
-          <button 
+          <button
             onClick={handleLogout}
             className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-rose-600 transition-colors bg-transparent hover:bg-rose-50 px-3 py-2 rounded-lg"
           >
