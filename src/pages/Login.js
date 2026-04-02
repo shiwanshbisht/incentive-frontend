@@ -61,10 +61,10 @@ export function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-blue-800 to-cyan-800 relative overflow-hidden">
       {/* Success Overlay Spinner */}
       {showSuccessSpinner && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/20 backdrop-blur-sm transition-all duration-300">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm transition-all duration-300">
           <div className="flex flex-col items-center space-y-4 bg-white p-8 rounded-2xl shadow-2xl border border-slate-100">
             <div className="animate-spin rounded-full h-10 w-10 border-4 border-indigo-100 border-t-indigo-600"></div>
             <p className="text-slate-700 font-medium animate-pulse">Login successful! Redirecting...</p>
@@ -72,8 +72,11 @@ export function Login() {
         </div>
       )}
 
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 max-w-[800px] rounded-full opacity-60 blur-[120px] bg-blue-100 mix-blend-multiply"></div>
+      {/* Decorative Glows */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-violet-600/40 mix-blend-screen filter blur-[100px]"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-cyan-500/30 mix-blend-screen filter blur-[120px]"></div>
+        <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full bg-indigo-500/40 mix-blend-screen filter blur-[80px]"></div>
       </div>
 
       <Card className="w-full max-w-md z-10 shadow-xl border-slate-100 p-2 mx-4">
