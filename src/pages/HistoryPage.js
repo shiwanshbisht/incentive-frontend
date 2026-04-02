@@ -18,7 +18,7 @@ export function HistoryPage() {
         return;
       }
       try {
-        const response = await axios.get(`http://localhost:4000/calculation?employeeId=${employeeId}`);
+        const response = await axios.get(`https://incentive-backend-na5x.onrender.com/calculation?employeeId=${employeeId}`);
         if (response.data.success) {
           setCalculations(response.data.calculations);
         }
@@ -38,7 +38,7 @@ export function HistoryPage() {
     const month = date.toLocaleString('en-US', { month: 'short' });
     const year = date.getFullYear();
     const time = date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }).toLowerCase();
-    
+
     return `${day} ${month} ${year}, ${time}`;
   };
 
@@ -53,8 +53,8 @@ export function HistoryPage() {
     return 'light';
   };
 
-  const filteredCalculations = filterCategory === 'All Categories' 
-    ? calculations 
+  const filteredCalculations = filterCategory === 'All Categories'
+    ? calculations
     : calculations.filter(c => c.category === filterCategory);
 
   return (
@@ -70,7 +70,7 @@ export function HistoryPage() {
       </div>
 
       <div className="flex items-center justify-between bg-white p-3 px-4 rounded-xl border border-slate-200 shadow-sm max-w-sm">
-        <select 
+        <select
           value={filterCategory}
           onChange={(e) => setFilterCategory(e.target.value)}
           className="bg-transparent border-none text-sm font-medium text-slate-700 outline-none cursor-pointer w-full focus:ring-0"

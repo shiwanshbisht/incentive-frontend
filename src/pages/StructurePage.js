@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Info, Trophy } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { TabsList, TabsTrigger } from '../components/ui/Tabs';

@@ -3,8 +3,6 @@ import { ArrowLeft, Calculator, Target, Trophy, Calendar } from 'lucide-react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { Card } from '../ui/Card';
-import { Badge } from '../ui/Badge';
-
 const getSlabSymbol = (slabName) => {
   if (!slabName) return "";
   const lower = slabName.toLowerCase();
@@ -30,7 +28,6 @@ export function CalculatorDetail({ calculator, structureData, onBack }) {
   const isConsistency = calculator.title.includes("Consistency");
   const isGrowth = calculator.title.includes("Growth");
   const isIncremental = calculator.title.includes("Incremental");
-  const isSecondFlash = calculator.title.includes("Second Flash");
   const isQuarterly = calculator.title.includes("Quarterly");
 
   const handleCalculate = () => {
@@ -189,7 +186,7 @@ export function CalculatorDetail({ calculator, structureData, onBack }) {
 
     if (employeeId) {
       axios
-        .post('http://localhost:4000/calculation', {
+        .post('https://incentive-backend-na5x.onrender.com/calculation', {
           employeeId,
           calculatorType: calculator.title,
           category,

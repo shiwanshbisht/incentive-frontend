@@ -20,10 +20,10 @@ export function Login() {
     setIsLoggingIn(true);
     try {
       const response = await axios.post(
-        `http://localhost:4000/login`,
+        `https://incentive-backend-na5x.onrender.com/login`,
         {
-          employeeId: employeeId,
-          mobileNumber: mobileNumber,
+          employeeId: employeeId.trim(),
+          mobileNumber: mobileNumber.trim(),
         },
         {
           headers: {
