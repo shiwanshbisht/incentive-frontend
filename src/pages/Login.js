@@ -33,14 +33,18 @@ export function Login() {
       );
 
       const result = response.data;
+      console.log("Login API response:", result);
 
-      if (result.success) {
-        Cookies.set("employeeId", result.user.employeeId);
+      if (result.success && result.user) {
+        // Explicitly set path to '/' so the cookie is accessible across the whole dashboard
+        Cookies.set("employeeId", result.user.employeeId, { path: '/', expires: 7 });
+        
         setShowSuccessSpinner(true);
         setTimeout(() => {
           navigate('/dashboard/structure');
         }, 800);
       } else {
+        setError(result.error || "Login failed. Please verify your credentials.");
         setIsLoggingIn(false);
       }
     } catch (err) {

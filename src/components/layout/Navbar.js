@@ -7,6 +7,7 @@ export function Navbar() {
   const navigate = useNavigate();
 
   const handleLogout = () => {
+    Cookies.remove('employeeId', { path: '/' });
     navigate('/login');
   };
   const employeeId = Cookies.get('employeeId');
